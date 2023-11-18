@@ -1,0 +1,53 @@
+import java.util.*;
+import java.util.Scanner;
+
+class HighestFrequencyNumbers {
+    private static int[] numbers;
+    int mark;
+
+    // Method to identify top K numbers with maximum occurrences
+    public static List<Integer> topkFrequentNumbers (int n) {
+
+        // Calculate frequency of each number in the array
+        for (int num : numbers) {
+            int max = 0, val = 0; int count=0;
+            for(int i=0;i<n;i++) {
+                for(int j=0;j<n;j++) {
+                    if(numbers[j] == numbers[i])
+                        ++count;
+                }
+                if(count > max) {
+                    max = count;
+                    val = numbers[i];
+                }
+            }
+        }
+    private void array()
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("enter a value: ");
+        int k = scanner.nextInt();
+        System.out.println("The value you entered is: " + k);
+        scanner.close();
+
+        int[] a = new int[a]; // Declaring an array of the specified size
+
+        System.out.println("Enter " + a + " elements:");
+        for (int i = 0; i < a[i]; i++) {
+            numbers[i] = scanner.nextInt();
+            // Displaying the top K numbers with maximum occurrences
+            System.out.println("Top " + k + " numbers with maximum occurrences:");
+            for (int num : result) {
+                System.out.println(num);
+            }
+        }}
+    }
+        public static void main(String[] args) {
+            HighestFrequencyNumbers obj1 = new HighestFrequencyNumbers();
+            HighestFrequencyNumbers obj2= new HighestFrequencyNumbers();
+            obj1.topkFrequentNumbers();
+            obj2.array();
+
+
+    }
+}
