@@ -1,51 +1,51 @@
-import java.util.*;
 import java.util.Scanner;
 
-class HighestFrequencyNumbers {
-    private static int[] numbers;
-    int mark;
+public class FreqInt {
+    private int[] numbers = new int[10];
+    private int k;
+    private int mode;
 
-    public static List<Integer> topkFrequentNumbers (int n) {
+    public void getFromUser() {
+        Scanner scanner = new Scanner(System.in);
 
-        // Calculate frequency of each number in the array
-        for (int num : numbers) {
-            int max = 0, val = 0; int count=0;
-            for(int i=0;i<n;i++) {
-                for(int j=0;j<n;j++) {
-                    if(numbers[j] == numbers[i])
-                        ++count;
-                }
-                if(count > max) {
-                    max = count;
-                    val = numbers[i];
+        System.out.println("Enter the value of K: ");
+        k = scanner.nextInt();
+
+        System.out.println("Enter 10 numbers for the array:");
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+    }
+
+    public int calculateMode() {
+        int maxCount = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            int count = 0;
+
+            for (int j = 0; j < numbers.length; j++) {
+                if (numbers[i] == numbers[j]) {
+                    count++;
+
+                    if (count > maxCount) {
+                        maxCount = count;
+                        mode = numbers[i];
+                    }
                 }
             }
         }
-    private void array()
-    {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("enter a value: ");
-        int k = scanner.nextInt();
-        System.out.println("The value you entered is: " + k);
-        scanner.close();
 
-        int[] a = new int[a]; // Declaring an array of the specified size
+        return mode;
+        }
 
-        System.out.println("Enter " + a + " elements:");
-        for (int i = 0; i < a[i]; i++) {
-            numbers[i] = scanner.nextInt();
-            System.out.println("Top " + k + " numbers with maximum occurrences:");
-            for (int num : result) {
-                System.out.println(num);
-            }
-        }}
+    public void displayMode() {
+        System.out.println("Mode: " + mode);
     }
-        public static void main(String[] args) {
-            HighestFrequencyNumbers obj1 = new HighestFrequencyNumbers();
-            HighestFrequencyNumbers obj2= new HighestFrequencyNumbers();
-            obj1.topkFrequentNumbers();
-            obj2.array();
 
-
-    }
+    public static void main(String[] args) {
+        FreqInt frequencyAnalyzer = new FreqInt();
+        frequencyAnalyzer.getFromUser();
+        frequencyAnalyzer.calculateMode();
+        frequencyAnalyzer.displayMode();
+}
 }
