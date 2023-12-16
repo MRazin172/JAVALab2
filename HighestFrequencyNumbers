@@ -5,7 +5,6 @@ class HighestFrequencyNumbers {
     private static int[] numbers;
     int mark;
 
-    // Method to identify top K numbers with maximum occurrences
     public static List<Integer> topkFrequentNumbers (int n) {
 
         // Calculate frequency of each number in the array
@@ -35,7 +34,6 @@ class HighestFrequencyNumbers {
         System.out.println("Enter " + a + " elements:");
         for (int i = 0; i < a[i]; i++) {
             numbers[i] = scanner.nextInt();
-            // Displaying the top K numbers with maximum occurrences
             System.out.println("Top " + k + " numbers with maximum occurrences:");
             for (int num : result) {
                 System.out.println(num);
